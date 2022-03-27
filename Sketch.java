@@ -2,7 +2,8 @@ import processing.core.PApplet;
 
 public class Sketch extends PApplet {
 	
-	
+	float lineX = 0;
+
   /**
    * Called once at the beginning of execution, put your size all in this method
    */
@@ -24,7 +25,7 @@ public class Sketch extends PApplet {
    */
   public void draw() {
 
-    // Quad 1 (10 x 10 grid)
+    // 10 x 10 grid
     stroke(0);
     for (int lineX = 0; lineX < width/2; lineX += width/2/10){
       line(lineX, 0, lineX, height/2);
@@ -33,7 +34,7 @@ public class Sketch extends PApplet {
       line(0, lineY, width/2, lineY);
     }
   
-    // Quad 2 (5 x 5 circle)
+    // 5 x 5 circle
     for (int circleY = height/20; circleY < height/2; circleY += height/2/5){
       for (int circleX = width/2 + width/20; circleX < width; circleX += width/2/5){
         fill(212,15,125);
@@ -41,33 +42,18 @@ public class Sketch extends PApplet {
       }
     }
 
-    /*// Quad 3
-    for (int gradient = 0; gradient < width/2; gradient++) {
-      stroke(gradient, gradient, gradient);
+    // Gradient
+    for (int RGB = 0; RGB != 255; RGB++){
+      stroke(RGB, RGB, RGB);
       strokeWeight(3);
-      line(gradient, height/2, gradient, height);
-      
-    }
-    */
-
-    // Quad 4
-
-    // Draw flower
-    for (int flower = 0; flower < 136; flower+=45) {
-      pushMatrix();
-      translate(width/2 + width/4, height/2 + height/4);
-      rotate(radians(flower));
-      fill(220, 93, 52);
-      ellipse(0, 0, width/20, height/3);
-      popMatrix();
+      lineX += (float)(width/2) / 255;
+      if (lineX < width/2){
+        line(lineX, height/2, lineX, height);
+      }
     }
 
-    // Draw centre of flower
-    fill(38, 108, 45);
-    ellipse(width/2 + width/4, height/2 + height/4, width/15, height/15);
 
-
-
+    
   // define other methods down here.
 }
 
