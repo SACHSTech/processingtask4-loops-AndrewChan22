@@ -53,6 +53,19 @@ public class Sketch extends PApplet {
     }
 
 
+    // Flower 
+    stroke(0);
+    translate(width/2 + width/4, height/2 + height/4);
+    for (int flower = 0; flower != 8; flower+=1) {
+      rotate(radians(45));
+      fill(220, 93, 52);
+      ellipse(0, 0, width/20, height/2.5f);  
+    }
+    // Draw centre of flower
+    noStroke();
+    fill(38, 108, 45);
+    ellipse(0, 0, width/8.5f, height/8.5f);
+
     
   // define other methods down here.
 }
