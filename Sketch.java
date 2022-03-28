@@ -25,6 +25,7 @@ public class Sketch extends PApplet {
    */
   public void draw() {
 
+    // Q1
     // 10 x 10 grid
     stroke(0);
     for (int lineX = 0; lineX < width/2; lineX += width/2/10){
@@ -34,6 +35,7 @@ public class Sketch extends PApplet {
       line(0, lineY, width/2, lineY);
     }
   
+    // Q2
     // 5 x 5 circle
     for (int circleY = height/20; circleY < height/2; circleY += height/2/5){
       for (int circleX = width/2 + width/20; circleX < width; circleX += width/2/5){
@@ -42,6 +44,7 @@ public class Sketch extends PApplet {
       }
     }
 
+    // Q3
     // Gradient
     for (int RGB = 0; RGB != 255; RGB++){
       stroke(RGB, RGB, RGB);
@@ -52,7 +55,7 @@ public class Sketch extends PApplet {
       }
     }
 
-
+    // Q4
     // Flower 
     stroke(0);
     translate(width/2 + width/4, height/2 + height/4);
@@ -66,7 +69,6 @@ public class Sketch extends PApplet {
     fill(38, 108, 45);
     ellipse(0, 0, width/8.5f, height/8.5f);
 
-    
   // define other methods down here.
 }
 
