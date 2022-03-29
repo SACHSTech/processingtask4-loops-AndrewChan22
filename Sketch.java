@@ -1,5 +1,10 @@
 import processing.core.PApplet;
 
+/**
+  * Description: Draw specific drawings in four quadrants
+  * @author: A. Chan
+  */
+
 public class Sketch extends PApplet {
 	
 	float lineX = 0;
@@ -46,11 +51,11 @@ public class Sketch extends PApplet {
 
     // Q3
     // Gradient
-    for (int RGB = 0; RGB != 255; RGB++){
+    for (int RGB = 0; RGB < 256; RGB++){
       stroke(RGB, RGB, RGB);
       strokeWeight(3);
       lineX += (float)(width/2) / 255;
-      if (lineX < width/2){
+      if (lineX < width/2) {
         line(lineX, height/2, lineX, height);
       }
     }
@@ -70,6 +75,6 @@ public class Sketch extends PApplet {
     ellipse(0, 0, width/8.5f, height/8.5f);
 
   // define other methods down here.
-}
+  }
 
 }       
